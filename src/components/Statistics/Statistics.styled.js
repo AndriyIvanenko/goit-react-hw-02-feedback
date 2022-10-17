@@ -5,3 +5,8 @@ export const StatsItem = styled.li`
     margin-bottom: 3px;
   }
 `;
+
+export const StatsItemName = styled.span`
+  display: inline-block;
+  width: 90px;
+`;
