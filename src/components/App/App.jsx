@@ -21,26 +21,21 @@ class Feedback extends React.Component {
     return total ? (this.state.good / total) * 100 : 0;
   };
 
-  onGoodClick = () => {
-    this.setState({ good: this.state.good + 1 });
-  };
-  onNeutralClick = () => {
-    this.setState({ neutral: this.state.neutral + 1 });
-  };
-  onBadClick = () => {
-    this.setState({ bad: this.state.bad + 1 });
-  };
+  // onGoodClick = () => {
+  //   this.setState({ good: this.state.good + 1 });
+  // };
+  // onNeutralClick = () => {
+  //   this.setState({ neutral: this.state.neutral + 1 });
+  // };
+  // onBadClick = () => {
+  //   this.setState({ bad: this.state.bad + 1 });
+  // };
 
-  options = {
-    good: 'Good',
-    neutral: 'Neutral',
-    bad: 'Bad',
-  };
-
-  onClickCallbacks = {
-    onGoodClick: this.onGoodClick,
-    onNeutralClick: this.onNeutralClick,
-    onBadClick: this.onBadClick,
+  onFeedbackClick = evt => {
+    const propertyToChange = evt.target.name;
+    this.setState(prevState => {
+      return { [propertyToChange]: prevState[propertyToChange] + 1 };
+    });
   };
 
   render() {
@@ -48,8 +43,8 @@ class Feedback extends React.Component {
       <FeedbackForm>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.options}
-            onLeaveFeedback={this.onClickCallbacks}
+            options={this.state}
+            onLeaveFeedback={this.onFeedbackClick}
           ></FeedbackOptions>
         </Section>
 
