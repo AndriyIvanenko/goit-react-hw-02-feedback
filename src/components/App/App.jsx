@@ -21,18 +21,9 @@ class Feedback extends React.Component {
     return total ? (this.state.good / total) * 100 : 0;
   };
 
-  // onGoodClick = () => {
-  //   this.setState({ good: this.state.good + 1 });
-  // };
-  // onNeutralClick = () => {
-  //   this.setState({ neutral: this.state.neutral + 1 });
-  // };
-  // onBadClick = () => {
-  //   this.setState({ bad: this.state.bad + 1 });
-  // };
-
   onFeedbackClick = evt => {
     const propertyToChange = evt.target.name;
+    // this.setState({ [propertyToChange]: this.state[propertyToChange] + 1 });
     this.setState(prevState => {
       return { [propertyToChange]: prevState[propertyToChange] + 1 };
     });
