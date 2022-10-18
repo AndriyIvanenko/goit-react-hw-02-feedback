@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StatsItem = styled.li`
+  width: fit-content;
+  margin: auto;
   &:not(:last-child) {
     margin-bottom: 3px;
   }
